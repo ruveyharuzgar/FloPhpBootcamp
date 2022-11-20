@@ -4,7 +4,7 @@
 
     $kayitNo=$_GET["id"];
 
-    $sorgu=$baglanti->query("delete from kullanicilar where id=$kayitNo");
+    $sorgu=$baglanti->prepare("delete from kullanicilar where id=$kayitNo");
 
     if($sorgu){
         echo "<script>

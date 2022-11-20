@@ -33,8 +33,8 @@
         </tr>
 
         <?php
-            $sorgu = $baglanti -> query("select * from kullanicilar order by id asc");
-            while($satir = $sorgu ->fetch_object())
+            $sorgu = $baglanti -> prepare("select * from kullanicilar order by id asc");
+            while($satir = $sorgu ->fetch(PDO::FETCH_ASSOC))
             {
                 echo " <tr align='center'>
                 <td> $satir->adSoyad </td>
