@@ -1,11 +1,4 @@
 <?php
-//sabitler de değişkenler operatörler if else, for, dizilerde parçalarken while/foreach, parametreli fonk,
-// diziler, küresel değişkenler, dosya işlemlerinde fonksiyonlar (cv yükleme), ekleme isim silme, kopyalama,
-//phpmailer classı var onunla mail gönderilir.
-//29-40 video arası bilmen gerek 
-
-//web service ve restful 43.--44. dersleri bilmen lazım mülakat için ondan sonrakilere dikkat et 
-//php curl
 
     session_start();
 ?>
