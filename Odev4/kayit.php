@@ -2,11 +2,16 @@
     require_once("baglan.php");
     $baglan = baglan();
 
+    require_once("kontrol.php");
+    $kontrol = new Kontrol();
+
     $adsoyad = $_POST["adsoyad"];
     $tckimlik = $_POST["tckimlik"];
 
-    $sorgu = $baglan -> prepare("insert into kisiler(id,adsoyad,tckimlik) values (?,?,?)");
-    $ekle = $sorgu -> execute(array(NULL,$adsoyad,$tckimlik));
+    $kontrol->test($tckimlik);
+
+    $sorgu = $baglan -> prepare("insert into kisiler(id,adsoyad,tckimlik,durum) values (?,?,?,?)");
+    $ekle = $sorgu -> execute(array(NULL,$adsoyad,$kontrol->$tckimlik,$kontrol->durum));
 
     if($ekle){
         echo "<script>

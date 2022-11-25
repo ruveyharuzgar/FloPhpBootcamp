@@ -45,9 +45,7 @@
                 <td> $satir[id] </td>
                 <td> $satir[adsoyad] </td>
                 <td> $satir[tckimlik] </td>
-                <td> <?php $satir = new Kontrol(str('$satir[tckimlik]'));
-                ?>
-                Kontrol Kısmı Eklenecek </td>
+                <td> $satir[durum] </td>
                 </tr>
                 ";
             } 

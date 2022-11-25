@@ -2,19 +2,19 @@
     require_once("baglan.php");
     $baglan = baglan();
 
-    
 class Kontrol { 
-       public $tckimlik = $_GET["tckimlik"];
+       public $tckimlik;
+       public $durum;
 
-       public function __construct($tckimlik){
+       public function test($tckimlik){
         $this->tckimlik = $tckimlik;
         
         $tckimlik = trim($tckimlik);
         if ($tckimlik == "") {
-            return "TC KİMLİK HATALI";
+            return $this->durum = "geçersiz";
         }
         if ($tckimlik[0] == 0 or !ctype_digit($tckimlik) or strlen($tckimlik) != 11) {
-            return "TC KİMLİK HATALI";
+            return $this->durum = "geçersiz";
         } else {
             $cifthaneler = 0;
             for ($i = 0; $i < 9; $i += 2) {
@@ -33,10 +33,10 @@ class Kontrol {
 
             if (($tekhaneler * 7 - $ciftHaneler) % 10 != $tckimlik[9]) {
                 if($tumu % 10 != $tckimlik[10]){
-                    return "TC KİMLİK DOĞRU";
+                    return $this->durum = "geçerli";
                 }
             } else {
-                return "TC KİMLİK HATALI";
+                return $this->durum = "geçersiz";
             }
         }   
 }
