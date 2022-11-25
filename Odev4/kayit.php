@@ -11,7 +11,7 @@
     $kontrol->test($tckimlik);
 
     $sorgu = $baglan -> prepare("insert into kisiler(id,adsoyad,tckimlik,durum) values (?,?,?,?)");
-    $ekle = $sorgu -> execute(array(NULL,$adsoyad,$kontrol->$tckimlik,$kontrol->durum));
+    $ekle = $sorgu -> execute(NULL,$adsoyad,$kontrol->$tckimlik,$kontrol->durum);
 
     if($ekle){
         echo "<script>
@@ -20,7 +20,7 @@
         </script>";
     } else {
         echo "<script>
-        alert('Hata: Bilgiler Kaydedilemedi');
+        alert('Hata: Bilgiler Kaydedilemedi!');
         window.top.location = 'index.php';
         </script>";
     }
