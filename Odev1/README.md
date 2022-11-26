@@ -1,0 +1,1 @@
+# Koyun / Ağıl Kapasitesi
