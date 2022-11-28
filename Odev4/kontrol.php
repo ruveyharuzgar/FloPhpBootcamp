@@ -6,8 +6,13 @@ class Kontrol {
        public $tckimlik;
        public $durum;
 
-       public function test($tckimlik){
+      /* function __construct($tckimlik)
+       {
         $this->tckimlik = $tckimlik;
+       }
+       */
+      
+       public function test($tckimlik){
         
         $tckimlik = trim($tckimlik);
         if ($tckimlik == "") {
