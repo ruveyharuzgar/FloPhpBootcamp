@@ -2,7 +2,6 @@
     require_once 'baglan.php';
     $baglan = baglan();
 
-    $islem = $_GET["op"];
     $kayitno = (int) $_GET["id"];
 
     if ( $kayitno > 0) {
