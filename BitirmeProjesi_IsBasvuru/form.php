@@ -2,10 +2,10 @@
     require_once 'baglan.php';
     $baglan = baglan();
 
-	$kayitno = $_GET["id"];
+    $id = (int) $_GET["id"];
 
-	if($kayitno>0) {
-		$sorgu = $baglan->query("select * from application where id=$kayitno");
+	if($id>0) {
+		$sorgu = $baglan->query("select * from application where (id=$id)");
 		$kayit = $sorgu->fetchObject();
 	}
 ?>

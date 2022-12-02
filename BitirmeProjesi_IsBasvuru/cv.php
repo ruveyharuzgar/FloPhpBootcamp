@@ -10,8 +10,8 @@
         if ($upload) {
             echo "<script>
             alert('Cv Yüklendi');
+            window.top.locaiton=index.php;
             </script> <br>
-            <img src='$newFileName' height='100'>
             ";
         } else {
             echo "<script>
@@ -26,12 +26,6 @@
         </script>
         ";
     }
-
-        //yeni isim koyabilriiz 
-        // $newFileName="mehmet.jpg";
-
-      
-
   
 ?>
 <!DOCTYPE html>

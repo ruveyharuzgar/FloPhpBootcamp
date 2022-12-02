@@ -50,7 +50,7 @@ require_once 'Classes/PHPExcel.php';
 		<script src="./html/assets/js/custom/widgets.js"></script>
 
 
-    <p style="text-align: center;"> <br> <a style="background: darkgreen; color: aliceblue;" href="form.php"> İŞ BAŞVURUSU YAP </a> <br> </p>
+    <p style="text-align: center;"> <br> <a style="background: darkgreen; color: aliceblue;" href="ekle.php"> İŞ BAŞVURUSU YAP </a> <br> </p>
 
 
     <?php
