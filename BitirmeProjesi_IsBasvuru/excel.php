@@ -79,5 +79,3 @@
     $save = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
     $save->save('php://output');
     exit;
-
-?>

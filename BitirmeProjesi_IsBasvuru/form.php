@@ -11,67 +11,160 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Login V15</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-    <style>
-        .basvuruOlusturmaAlani {
-            max-width: 450px;
-            height: auto;
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 0 auto 0 auto;
-            display: table;
-            background: darkkhaki;
-
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            border-radius: 20px;
-
-        }
-    </style>
-
-    <title>Document</title>
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="./sign/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./sign/css/util.css">
+    <link rel="stylesheet" type="text/css" href="./sign/css/main.css">
+    <!--===============================================================================================-->
 </head>
-<body style="text-align: center">
-    <p> 
-        <br><a style="background: darkgreen; color: aliceblue;" href = "index.php"> BAŞVURULARI GÖRÜNTÜLE </a><br> 
-    </p>
-<div class="basvuruOlusturmaAlani">
 
-    <form action="kayit.php" method="post">
-        <input type="text" placeholder="Ad" name="name" value="<?php echo $kayit->name; ?>"> <br><br>
-        <input type="text" placeholder="Soyad"  name="surname" value="<?php echo $kayit->surname; ?>"> <br><br>
-        <input type="text" placeholder="Doğum Yeri"  name="birth_place" value="<?php echo $kayit->birth_place; ?>"> <br><br>
-        Doğum Tarihi <input type="date" placeholder="Doğum Tarihi" name="date_of_birth" value="<?php echo $kayit->date_of_birth; ?>"> <br><br>
-        <input type="email" placeholder="E-posta" name="email" value="<?php echo $kayit->email; ?>"> <br><br>
-        <input type="tel" placeholder="Cep Telefonu" name="mobile_phone" value="<?php echo $kayit->mobile_phone; ?>"> <br><br>
-        <input type="tel" placeholder="Ev Telefonu" name="home_phone" value="<?php echo $kayit->home_phone; ?>"> <br><br>
-        <input type="text" placeholder="Okul Adı" name="school_name" value="<?php echo $kayit->school_name; ?>"> <br><br>
-        <input type="number" placeholder="Mezuniyet Yılı" name="graduation_year" value="<?php echo $kayit->graduation_year; ?>"> <br><br>
-        <input type="text" placeholder="Adres" name="address" value="<?php echo $kayit->address; ?>"> <br><br>
-        <input type="text" placeholder="Cinsiyet" name="gender" value="<?php echo $kayit->gender; ?>"> <br><br>
-        <input type="text" placeholder="Medeni Hali" name="civil_status" value="<?php echo $kayit->civil_status; ?>"> <br><br>
-        <input type="text" placeholder="Ehliyet" name="driving_license" value="<?php echo $kayit->driving_license; ?>"> <br><br>
-        <input type="text" placeholder="Askerlik Durumu" name="soldiering" value="<?php echo $kayit->soldiering; ?>"> <br><br>
-        Başvuru Tarihi <input type="date" placeholder="Başvuru Tarihi" name="application_date" value="<?php echo $kayit->application_date; ?>"> <br><br>
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url(./sign/images/titlebackground.jpg);">
+                    <span class="login100-form-title-1">
+                        DÜZENLE
+                    </span> <br><br>
+                    <a href="index.php" class="fw-bolder text-white-800 text-hover-primary fs-10 btn btn-danger" style="float:left"> TÜM BAŞVURULARI GÖRÜNTÜLE </a>
+                </div>
 
-        <br><br><hr><br>
-        <br><a style="background: darkgreen; color: aliceblue;" href = "cv.php"> Cv Yükle </a><br> 
-        <br><br><hr><br>
+                <form action="kayit.php" method="post" class="login100-form validate-form">
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" style="float:left" type="text" name="name" placeholder="Adınız " value="<?php echo $kayit->name; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="surname" placeholder="Soyadınız" value="<?php echo $kayit->surname; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="birth_place" placeholder="Doğum Yeri" value="<?php echo $kayit->birth_place; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <span class="label-input100">Doğum Tarihi</span>
+                        <input class="input100" type="date" name="date_of_birth" value="<?php echo $kayit->date_of_birth; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="mail" name="email" placeholder="Mail Adresiniz" value="<?php echo $kayit->email; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="mobile_phone" placeholder="Cep Telefonu" value="<?php echo $kayit->mobile_phone; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="home_phone" placeholder="Ev Telefonu" value="<?php echo $kayit->home_phone; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="school_name" placeholder="Okul Adı" value="<?php echo $kayit->school_name; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <span class="label-input100">Mezuniyet Yılı</span>
+                        <input class="input100" type="date" name="graduation_year" value="<?php echo $kayit->graduation_year; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="address" placeholder="Adres" value="<?php echo $kayit->address; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="gender" placeholder="Cinsiyet" value="<?php echo $kayit->gender; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="civil_status" placeholder="Medeni Hali" value="<?php echo $kayit->civil_status; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="driving_license" placeholder="Ehliyet" value="<?php echo $kayit->driving_license; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <input class="input100" type="text" name="soldiering" placeholder="Askerlik Durum" value="<?php echo $kayit->soldiering; ?>">
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
+                        <span class="label-input100">Başvuru Tarihi</span>
+                        <input class="input100" type="date" name="application_date" value="<?php echo $kayit->application_date; ?>">
+                    </div>
+                    <div class="wrap-input100 mb-3" data-validate="Boş geçilemez">
+                        <form method="post" enctype="multipart/form-data">
+                            <span class="label-input100">CV Yükleyiniz</span>
+                            <input class="input100 pt-3" type="file" name="files">
 
-		<input type="hidden" name="id" value="<?php echo $kayit->id; ?>">
-        <input type="submit" value="Başvur">
+                            <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
+                                <input type="hidden" name="id" value="<?php echo $kayit->id; ?>">
+                                <button type="submit" class="login100-form-btn"> BAŞVUR </button>
+                            </div>
+                        </form>
+                    </div>
 
-    </form>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    
-</div>
+    <!--===============================================================================================-->
+    <script src="./sign/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./sign/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./sign/vendor/bootstrap/js/popper.js"></script>
+    <script src="./sign/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./sign/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./sign/vendor/daterangepicker/moment.min.js"></script>
+    <script src="./sign/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="./sign/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="./sign/js/main.js"></script>
 
 </body>
+
 </html>
+
+<?php
+if ($_POST) {
+
+    $files = $_FILES["files"]["tmp_name"];
+    $newFileName = $_FILES["files"]["name"];
+
+    $control = array("application/pdf", "application/jpg", "application/png");
+
+    if (in_array($_FILES["files"]["type"], $control)) {
+        $upload = move_uploaded_file($files, $newFileName);
+        if ($upload) {
+            echo "<script>
+            alert('Cv Yüklendi');
+            window.top.locaiton=index.php;
+            </script> <br>
+            ";
+        } else {
+            echo "<script>
+            alert('Hata!');
+            </script>
+            ";
+        }
+    } else {
+        echo "<script>
+        alert('Lütfen pdf/jpg/png formatta yükleyiniz');
+        </script>
+        ";
+    }
+}
+?>

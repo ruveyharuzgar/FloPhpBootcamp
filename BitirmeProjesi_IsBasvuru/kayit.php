@@ -25,13 +25,18 @@
         $sorgu->execute();
         $kayitno = $sorgu->rowCount();
         if ($kayitno>0) {
-            header("Location:index.php");
+            echo "<script>
+            alert('Başarılı: Bilgiler Değiştirildi');
+            window.top.location = 'index.php';
+            </script>";
         } else {
-            echo  "Location:index.php";
+            echo "<script>
+            alert('Hata: Bilgiler Değiştirilemedi');
+            window.top.location = 'index.php';
+            </script>";
         }
         $sorgu -> closeCursor(); unset($sorgu);
     } else {
 
        header("Location:ekle.php");
     }
-?>

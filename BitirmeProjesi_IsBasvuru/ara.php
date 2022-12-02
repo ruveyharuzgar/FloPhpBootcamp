@@ -1,67 +1,71 @@
 <?php
-    require_once 'baglan.php';
-    $baglan = baglan();
+require_once 'baglan.php';
+$baglan = baglan();
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
 <head>
-    <base href="">
-    <title>Seven HTML Free - Bootstrap 5 HTML Multipurpose Light/Dark Admin Dashboard Theme by Keenthemes</title>
-    <meta name="description" content="Seven admin dashboard live demo. Check out all the features of the admin panel. Light &amp; dark skins. A large number of settings, additional services and widgets." />
-    <meta name="keywords" content="Seven, bootstrap, bootstrap 5, dmin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Seven HTML Free - Bootstrap 5 HTML Multipurpose Light/Dark Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/products/seven-html-pro" />
-    <meta property="og:site_name" content="Keenthemes | Seven HTML Free" />
-    <link rel="canonical" href="Https://preview.keenthemes.com/seven-html-free" />
-    <link rel="shortcut icon" href="./html/assets/media/logos/favicon.ico" />
-    <!--begin::Fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <!--end::Fonts-->
-    <!--begin::Page Vendor Stylesheets(used by this page)-->
-    <link href="./html/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
-    <!--end::Page Vendor Stylesheets-->
-    <!--begin::Global Stylesheets Bundle(used by all pages)-->
-    <link href="./html/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="./html/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <!--end::Global Stylesheets Bundle-->
-</head>
+
+    <head>
+        <base href="">
+        <title>Seven HTML Free - Bootstrap 5 HTML Multipurpose Light/Dark Admin Dashboard Theme by Keenthemes</title>
+        <meta name="description" content="Seven admin dashboard live demo. Check out all the features of the admin panel. Light &amp; dark skins. A large number of settings, additional services and widgets." />
+        <meta name="keywords" content="Seven, bootstrap, bootstrap 5, dmin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Seven HTML Free - Bootstrap 5 HTML Multipurpose Light/Dark Admin Dashboard Theme" />
+        <meta property="og:url" content="https://keenthemes.com/products/seven-html-pro" />
+        <meta property="og:site_name" content="Keenthemes | Seven HTML Free" />
+        <link rel="canonical" href="Https://preview.keenthemes.com/seven-html-free" />
+        <link rel="shortcut icon" href="./html/assets/media/logos/favicon.ico" />
+        <!--begin::Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+        <!--end::Fonts-->
+        <!--begin::Page Vendor Stylesheets(used by this page)-->
+        <link href="./html/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+        <!--end::Page Vendor Stylesheets-->
+        <!--begin::Global Stylesheets Bundle(used by all pages)-->
+        <link href="./html/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="./html/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <!--end::Global Stylesheets Bundle-->
+    </head>
     <title>Document</title>
 </head>
+
 <body>
-<script>var hostUrl = "./html/assets/";</script>
-		<!--begin::Javascript-->
-		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="./html/assets/plugins/global/plugins.bundle.js"></script>
-		<script src="./html/assets/js/scripts.bundle.js"></script>
-		<!--end::Global Javascript Bundle-->
-		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="./html/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-		<!--end::Page Vendors Javascript-->
-		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="./html/assets/js/custom/widgets.js"></script>
+    <script>
+        var hostUrl = "./html/assets/";
+    </script>
+    <!--begin::Javascript-->
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="./html/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="./html/assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src="./html/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+    <!--end::Page Vendors Javascript-->
+    <!--begin::Page Custom Javascript(used by this page)-->
+    <script src="./html/assets/js/custom/widgets.js"></script>
 
 
     <?php
-        if ($_GET) {
-            $kelime = $_GET["kelime"];
+    if ($_GET) {
+        $kelime = $_GET["kelime"];
 
-            if (!$kelime) {
-                echo "<script>
+        if (!$kelime) {
+            echo "<script>
                 alert('arama yapabilmek için bir kelime girin');
                 window.top.location='index.php'
                 </script>";
-            } else {
-                $sorgu = $baglan -> prepare("select * from application where name like :name");
-                $sorgu -> execute(array(":name"=>$kelime."%"));
-                $sirano=0;
-                echo '
+        } else {
+            $sorgu = $baglan->prepare("select * from application where name like :name");
+            $sorgu->execute(array(":name" => $kelime . "%"));
+            $sirano = 0;
+            echo '
                 <div class="col-xl-13">
                 <div class="card card-xl-stretch mb-7 mb-xl-6">
                     <div class="card-header border-0 pt-10">
@@ -103,14 +107,14 @@
                                 <!--begin::Table body-->
                                 <tbody>
                                     ';
-                                    foreach ($sorgu as $satir) {
-                                        $sirano++;
-                                        echo '
+            foreach ($sorgu as $satir) {
+                $sirano++;
+                echo '
                                                     <tr>
                                                     <td>
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex justify-content-start flex-column">
-                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$sirano. ' </a>
+                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $sirano . ' </a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -118,7 +122,7 @@
                                                     <td>
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex justify-content-start flex-column">
-                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['name'].' '.$satir['surname']. ' </a>
+                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['name'] . ' ' . $satir['surname'] . ' </a>
                                                         </div>
                                                     </div>
                                                     </td>
@@ -126,85 +130,77 @@
                                                     <td>
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex justify-content-start flex-column">
-                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['birth_place'].' </a>
+                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['birth_place'] . ' </a>
                                                         </div>
                                                     </div>
                                                     </td>
                                                     <td>
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex justify-content-start flex-column">
-                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['date_of_birth'].' </a>
+                                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['date_of_birth'] . ' </a>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="d-flex justify-content-start flex-column">
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['email']. ' </a>
+                                                        <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['email'] . ' </a>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex justify-content-start flex-column">
-                                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['mobile_phone']. ' </a>
+                                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['mobile_phone'] . ' </a>
                                                 </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['home_phone']. ' </a>
+                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['home_phone'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['school_name']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['school_name'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['graduation_year']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['graduation_year'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['address']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['address'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['gender']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['gender'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['civil_status']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['civil_status'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['driving_license']. ' </a>
-                                            </div>
-                                            </div>
-                                            </td>
-        
-                                            <td>
-                                            <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['soldiering']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['driving_license'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
@@ -212,7 +208,15 @@
                                             <td>
                                             <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' .$satir['application_date']. ' </a>
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['soldiering'] . ' </a>
+                                            </div>
+                                            </div>
+                                            </td>
+        
+                                            <td>
+                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">' . $satir['application_date'] . ' </a>
                                             </div>
                                             </div>
                                             </td>
@@ -245,23 +249,24 @@
                                         </td>
                                     </tr>
                                     
-                                    ';}
-                                    echo'
+                                    ';
+            }
+            echo '
                                     
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div> ';    
-        
-                    $sorgu->closeCursor();
-                    unset($sorgu);
-            }
-     }
-                    ?>
-  
-            </table> 
-        </body>
-        
-        </html>
+            </div> ';
+
+            $sorgu->closeCursor();
+            unset($sorgu);
+        }
+    }
+    ?>
+
+    </table>
+</body>
+
+</html>
