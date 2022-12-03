@@ -17,6 +17,10 @@ Admin kullanıcı ise girişini yapıp, tüm başvuruları görüntüleyebilir. 
 Wamp/xammp/mamp indir
 ```
 
+https://user-images.githubusercontent.com/65314278/205442328-4bb59f2d-40e6-4665-bc6d-6deb26a7480b.mp4
+
+
+
 
 ```
 Veritabanı kodlarını phpmyadmin'e içe aktar (.sql)
@@ -39,7 +43,4 @@ canlıda çalıştır (localhost:)
 
 
 <img src="https://github.com/ruveyharuzgar/FloPhpBootcamp/blob/master/BitirmeProjesi_IsBasvuru/video1.mp4" width="auto">
-<img src="gorsel-link" width="auto">
-<img src="gorsel-link" width="auto">
-<img src="gorsel-link" width="auto">
-<img src="gorsel-link" width="auto">
+
