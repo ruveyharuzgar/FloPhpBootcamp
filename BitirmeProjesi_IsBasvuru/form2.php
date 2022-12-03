@@ -119,14 +119,9 @@ $baglan = baglan();
                         <span class="label-input100">Başvuru Tarihi</span>
                         <input class="input100" type="date" name="application_date">
                     </div>
-                    <div class="wrap-input100 mb-3" data-validate="Boş geçilemez">
-                        <form method="post" enctype="multipart/form-data">
-                            <span class="label-input100">CV Yükleyiniz</span>
-                            <input class="input100 pt-3" type="file" name="files">
-                            <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
-                                <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> BAŞVUR </button>
-                            </div>
-                        </form>
+                    <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
+                        <input type="hidden" name="id">
+                        <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> EKLE </button>
                     </div>
 
                 </form>
