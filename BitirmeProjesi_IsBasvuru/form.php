@@ -1,16 +1,18 @@
 <?php
-    require_once 'baglan.php';
-    $baglan = baglan();
+require_once 'baglan.php';
+$baglan = baglan();
 
-    $id = (int) $_GET["id"];
+$id = (int) $_GET["id"];
 
-	if($id>0) {
-		$sorgu = $baglan->query("select * from application where (id=$id)");
-		$kayit = $sorgu->fetchObject();
-	}
+if ($id > 0) {
+    $sorgu = $baglan->query("select * from application where (id=$id)");
+    $kayit = $sorgu->fetchObject();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
     <title>Login V15</title>
@@ -39,6 +41,23 @@
     <link rel="stylesheet" type="text/css" href="./sign/css/main.css">
     <!--===============================================================================================-->
 </head>
+<script>
+    $(document).ready(function() {
+        $("#uploadphoto").on("submit", function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "form.php",
+                type: "post",
+                data: new FormData(this),
+                contentType: false,
+                preventDefault: false,
+                success: function(data) {
+                    alert(data);
+                }
+            })
+        })
+    })
+</script>
 
 <body>
     <div class="limiter">
@@ -51,6 +70,15 @@
                     <a href="index.php" class="fw-bolder text-white-800 text-hover-primary fs-10 btn " style="float:left; background-color: #9A58AD; color: aliceblue;"> TÜM BAŞVURULARI GÖRÜNTÜLE </a>
                 </div>
 
+                <form id="uploadphoto" method="post" enctype="multipart/form-data">
+                    <span class="label-input100">CV Yükleyiniz</span>
+                    <input class="input100 pt-3" type="file" name="files">
+
+                    <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
+                        <input type="hidden" name="id" value="<?php echo $kayit->id; ?>">
+                        <button type="submit" class="login100-form-btn pb-10" style="background-color: #9A58AD; color: aliceblue;"> CV EKLE </button>
+                    </div>
+                </form>
                 <form action="kayit.php" method="post" class="login100-form validate-form">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
                         <input class="input100" style="float:left" type="text" name="name" placeholder="Adınız " value="<?php echo $kayit->name; ?>">
@@ -100,19 +128,13 @@
                         <span class="label-input100">Başvuru Tarihi</span>
                         <input class="input100" type="date" name="application_date" value="<?php echo $kayit->application_date; ?>">
                     </div>
-                    <div class="wrap-input100 mb-3" data-validate="Boş geçilemez">
-                        <form method="post" enctype="multipart/form-data">
-                            <span class="label-input100">CV Yükleyiniz</span>
-                            <input class="input100 pt-3" type="file" name="files">
 
-                            <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
-                                <input type="hidden" name="id" value="<?php echo $kayit->id; ?>">
-                                <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> BAŞVUR </button>
-                            </div>
-                        </form>
+                    <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
+                        <input type="hidden" name="id" value="<?php echo $kayit->id; ?>">
+                        <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> GÜNCELLE </button>
                     </div>
-
                 </form>
+
             </div>
         </div>
     </div>
@@ -133,38 +155,22 @@
     <script src="./sign/vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
     <script src="./sign/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 </body>
 
 </html>
 
 <?php
+
 if ($_POST) {
-
-    $files = $_FILES["files"]["tmp_name"];
-    $newFileName = $_FILES["files"]["name"];
-
-    $control = array("application/pdf", "application/jpg", "application/png");
-
-    if (in_array($_FILES["files"]["type"], $control)) {
-        $upload = move_uploaded_file($files, $newFileName);
-        if ($upload) {
-            echo "<script>
-            alert('Cv Yüklendi');
-            window.top.locaiton=index.php;
-            </script> <br>
-            ";
-        } else {
-            echo "<script>
-            alert('Hata!');
-            </script>
-            ";
-        }
+    $source = $_FILES["files"]["tmp_name"];
+    $target = "cv/" . $_FILES["files"]["name"];
+    move_uploaded_file($source, $target);
+    if (move_uploaded_file($source, $target)) {
+        echo "Cv Yüklendi";
     } else {
-        echo "<script>
-        alert('Lütfen pdf/jpg/png formatta yükleyiniz');
-        </script>
-        ";
+        echo "Cv Yüklenemedi";
     }
 }
 ?>

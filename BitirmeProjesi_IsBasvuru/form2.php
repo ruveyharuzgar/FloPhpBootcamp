@@ -32,6 +32,23 @@ $baglan = baglan();
     <link rel="stylesheet" type="text/css" href="./sign/css/main.css">
     <!--===============================================================================================-->
 </head>
+<script>
+    $(document).ready(function() {
+        $("#uploadphoto").on("submit", function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "form.php",
+                type: "post",
+                data: new FormData(this),
+                contentType: false,
+                preventDefault: false,
+                success: function(data) {
+                    alert(data);
+                }
+            })
+        })
+    })
+</script>
 
 <body>
     <div class="limiter">
@@ -43,7 +60,17 @@ $baglan = baglan();
                     </span>
                 </div>
 
-                <form action="ekle.php"  method="post" class="login100-form validate-form" >
+                <form id="uploadphoto" method="post" enctype="multipart/form-data">
+                    <span class="label-input100">CV Yükleyiniz</span>
+                    <input class="input100 pt-3" type="file" name="files">
+
+                    <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
+                        <input type="hidden" name="id">
+
+                        <button type="submit" class="login100-form-btn pb-10" style="background-color: #9A58AD; color: aliceblue;"> cv ekle </button>
+                    </div>
+                </form>
+                <form action="ekle.php" method="post" class="login100-form validate-form">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Boş geçilemez">
                         <input class="input100" style="float:left" type="text" name="name" placeholder="Adınız">
                     </div>
@@ -97,8 +124,8 @@ $baglan = baglan();
                             <span class="label-input100">CV Yükleyiniz</span>
                             <input class="input100 pt-3" type="file" name="files">
                             <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
-                        <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> BAŞVUR </button>
-                    </div>
+                                <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> BAŞVUR </button>
+                            </div>
                         </form>
                     </div>
 
@@ -129,32 +156,15 @@ $baglan = baglan();
 </html>
 
 <?php
+
 if ($_POST) {
-
-    $files = $_FILES["files"]["tmp_name"];
-    $newFileName = $_FILES["files"]["name"];
-
-    $control = array("application/pdf", "application/jpg", "application/png");
-
-    if (in_array($_FILES["files"]["type"], $control)) {
-        $upload = move_uploaded_file($files, $newFileName);
-        if ($upload) {
-            echo "<script>
-            alert('Cv Yüklendi');
-            window.top.locaiton=index.php;
-            </script> <br>
-            ";
-        } else {
-            echo "<script>
-            alert('Hata!');
-            </script>
-            ";
-        }
+    $source = $_FILES["files"]["tmp_name"];
+    $target = "cv/" . $_FILES["files"]["name"];
+    move_uploaded_file($source, $target);
+    if (move_uploaded_file($source, $target)) {
+        echo "Cv Yüklendi";
     } else {
-        echo "<script>
-        alert('Lütfen pdf/jpg/png formatta yükleyiniz');
-        </script>
-        ";
+        echo "Cv Yüklenemedi";
     }
 }
 ?>

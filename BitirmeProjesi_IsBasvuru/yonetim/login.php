@@ -10,12 +10,10 @@ if ($_POST) {
 
     $sorgu = $baglan->prepare("select * from users where user='$user' && password='$password' ");
     $sorgu->execute();
+    $count = $sorgu->fetchColumn();
 
-    $sorgu->rowCount();
 
-    var_dump($sorgu);
-    //KULLANICI BİLGİLERİ KONTROL EDİLMİYOR. HET RÜLÜ BAŞARILI
-    if ($sorgu) {
+    if ($count>0) {
         setcookie("user", "$user", time() + 3600);
         $_SESSION["user"] = sha1(md5("ruveyharuzgar"));
 
@@ -25,7 +23,7 @@ if ($_POST) {
         </script>";
     } else {
         echo "<script>
-        alert('HATALI KULLANICI BİLGİSİ');
+        alert('KULLANICI BİLGİLERİ YANLIŞ');
         window.location.href='login.php';
         </script>";
     }
