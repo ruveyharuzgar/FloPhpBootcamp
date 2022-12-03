@@ -1,4 +1,4 @@
-# IS BASVURU PROJESI
+# İŞ BAŞVURU PROJESİ
 
 İşe Başvuru Projesi ile bir İK'nın dışarıdan kullanıcılara iş başvurusu yapma yetkisi veren, işe alım yapan kişinin de bu başvuruları görüntüleyip silebildiği kapsamlı bir projedir.
 
