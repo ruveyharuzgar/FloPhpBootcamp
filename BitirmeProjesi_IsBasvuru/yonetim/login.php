@@ -48,7 +48,7 @@ if ($_POST) {
     <link rel="stylesheet" href="../login/css/style.css">
 </head>
 
-<body class="img js-fullheight" style="background-image: url(../login/images/background.jpg);">
+<body class="img js-fullheight" style="background-color: #9A58AD;">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">

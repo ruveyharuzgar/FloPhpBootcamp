@@ -48,7 +48,7 @@
                     <span class="login100-form-title-1">
                         DÜZENLE
                     </span> <br><br>
-                    <a href="index.php" class="fw-bolder text-white-800 text-hover-primary fs-10 btn btn-danger" style="float:left"> TÜM BAŞVURULARI GÖRÜNTÜLE </a>
+                    <a href="index.php" class="fw-bolder text-white-800 text-hover-primary fs-10 btn " style="float:left; background-color: #9A58AD; color: aliceblue;"> TÜM BAŞVURULARI GÖRÜNTÜLE </a>
                 </div>
 
                 <form action="kayit.php" method="post" class="login100-form validate-form">
@@ -107,7 +107,7 @@
 
                             <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
                                 <input type="hidden" name="id" value="<?php echo $kayit->id; ?>">
-                                <button type="submit" class="login100-form-btn"> BAŞVUR </button>
+                                <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> BAŞVUR </button>
                             </div>
                         </form>
                     </div>

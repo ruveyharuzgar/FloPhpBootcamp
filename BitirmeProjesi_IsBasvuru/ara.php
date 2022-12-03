@@ -10,7 +10,6 @@ $baglan = baglan();
 
     <head>
         <base href="">
-        <title>Seven HTML Free - Bootstrap 5 HTML Multipurpose Light/Dark Admin Dashboard Theme by Keenthemes</title>
         <meta name="description" content="Seven admin dashboard live demo. Check out all the features of the admin panel. Light &amp; dark skins. A large number of settings, additional services and widgets." />
         <meta name="keywords" content="Seven, bootstrap, bootstrap 5, dmin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,22 +32,15 @@ $baglan = baglan();
         <link href="./html/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
         <!--end::Global Stylesheets Bundle-->
     </head>
-    <title>Document</title>
 </head>
 
-<body>
+<body style="background-color: #FAB100;">
     <script>
         var hostUrl = "./html/assets/";
     </script>
-    <!--begin::Javascript-->
-    <!--begin::Global Javascript Bundle(used by all pages)-->
     <script src="./html/assets/plugins/global/plugins.bundle.js"></script>
     <script src="./html/assets/js/scripts.bundle.js"></script>
-    <!--end::Global Javascript Bundle-->
-    <!--begin::Page Vendors Javascript(used by this page)-->
     <script src="./html/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-    <!--end::Page Vendors Javascript-->
-    <!--begin::Page Custom Javascript(used by this page)-->
     <script src="./html/assets/js/custom/widgets.js"></script>
 
 

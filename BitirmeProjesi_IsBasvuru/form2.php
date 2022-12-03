@@ -97,7 +97,7 @@ $baglan = baglan();
                             <span class="label-input100">CV Yükleyiniz</span>
                             <input class="input100 pt-3" type="file" name="files">
                             <div class="container-login100-form-btn pb-5" style="padding-left: 30%;">
-                        <button type="submit" class="login100-form-btn"> BAŞVUR </button>
+                        <button type="submit" class="login100-form-btn" style="background-color: #9A58AD; color: aliceblue;"> BAŞVUR </button>
                     </div>
                         </form>
                     </div>
