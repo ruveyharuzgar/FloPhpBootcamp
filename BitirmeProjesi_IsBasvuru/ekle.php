@@ -28,7 +28,7 @@ $sorgu -> closeCursor(); unset($sorgu);
 if ($kayitno>0) {
     echo "<script>
     alert('Başarılı: Bilgiler Kaydedildi');
-    window.top.location = 'index.php';
+    window.top.location = './yonetim/login.php';
     </script>";
 } else {
     echo "<script>
