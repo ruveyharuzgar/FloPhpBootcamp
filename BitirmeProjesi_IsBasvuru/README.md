@@ -33,6 +33,6 @@ canlıda çalıştır (localhost:)
 
 
 ## Versiyonlar
-Wamp Server 3.2.6
-PhpMyAdmin 5.1.1
-Php 7.4.26
+* Wamp Server 3.2.6
+* PhpMyAdmin 5.1.1
+* Php 7.4.26
