@@ -36,3 +36,10 @@ canlıda çalıştır (localhost:)
 * Wamp Server 3.2.6
 * PhpMyAdmin 5.1.1
 * Php 7.4.26
+
+
+<img src="https://github.com/ruveyharuzgar/FloPhpBootcamp/blob/master/BitirmeProjesi_IsBasvuru/video1.mp4" width="auto">
+<img src="gorsel-link" width="auto">
+<img src="gorsel-link" width="auto">
+<img src="gorsel-link" width="auto">
+<img src="gorsel-link" width="auto">
