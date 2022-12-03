@@ -1,16 +1,16 @@
 # İŞ BAŞVURU PROJESİ
 
-İşe Başvuru Projesi ile bir İK'nın dışarıdan kullanıcılara iş başvurusu yapma yetkisi veren, işe alım yapan kişinin de bu başvuruları görüntüleyip silebildiği kapsamlı bir projedir.
+*  İşe Başvuru Projesi ile bir İK'nın dışarıdan kullanıcılara iş başvurusu yapma yetkisi veren, işe alım yapan kişinin de bu başvuruları görüntüleyip silebildiği kapsamlı bir projedir.
 
 
 ## Başlarken
 
-Login ekranından sadece admin kullanıcılarının girebildiği bir panel karşılayacaktır. Eğer sadece başvuru yapacak dışarıdan kullanıcı ise altında bulunan başvuru butonuna basıp bilgilerini girdikten sonra başvuru gönderilecektir.
+*  Login ekranından sadece admin kullanıcılarının girebildiği bir panel karşılayacaktır. Eğer sadece başvuru yapacak dışarıdan kullanıcı ise altında bulunan başvuru butonuna basıp bilgilerini girdikten sonra başvuru gönderilecektir.
 Admin kullanıcı ise girişini yapıp, tüm başvuruları görüntüleyebilir. Başvuruları düzenleyip silebilir. 
 
 ### Kurulum
 
-Bilgisayarımızı hem sunucu hem istemci olarak kullanmamızı sağlayan Wamp/xammp/mamp programlarından birini yükledikten sonra phpmyadmin den eklediğim veritabanı kodları ile çalıştırabilir hale gelebilrisiniz.
+*  Bilgisayarımızı hem sunucu hem istemci olarak kullanmamızı sağlayan Wamp/xammp/mamp programlarından birini yükledikten sonra phpmyadmin den eklediğim veritabanı kodları ile çalıştırabilir hale gelebilrisiniz.
 
 
 ```
